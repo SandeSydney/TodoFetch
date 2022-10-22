@@ -1,0 +1,52 @@
+/* Remove existing settings */
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+/* Body display */
+body{
+    background: linear-gradient(-180deg, #37235f, #632a5f);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container Styling */
+.container{
+    height: auto;
+    width: 70%;
+}
+
+.content{
+    border: 1px solid wheat;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin: 1%;
+    padding: 2%;
+    gap: 20px;
+}
+
+/* Menu Frame Styling */
+.container .content #menuFrame{
+    flex: 1;
+    border: 1px solid yellow;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.container .content #contentDisplay{
+    flex: 3;
+    border: 1px solid blue;
+    height: 80vh;
+}
