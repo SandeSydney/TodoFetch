@@ -14,3 +14,9 @@ const changeDisplay = (element)=>{
         document.getElementById('createNew').style.display = 'none'
     }
 }
+
+// Reset form elements
+const reset = ()=>{
+    document.getElementById('userID').value = ''
+    document.getElementById('title').value = ''
+}
