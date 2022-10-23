@@ -20,9 +20,9 @@
                 <!-- Menu Frame -->
                 <div id="menuFrame">
 
-                    <a id="createTodo">Create New</a>
-                    <a id="incompleteTodo">Incomplete Todos</a>
-                    <a id="completedTodo">Completed Todos</a>
+                    <a id="createTodo" onclick="changeDisplay(this)">Create New</a>
+                    <a id="incompleteTodo" onclick="changeDisplay(this)">Incomplete Todos</a>
+                    <a id="completedTodo" onclick="changeDisplay(this)">Completed Todos</a>
 
                 </div>
             </div>
@@ -34,7 +34,7 @@
                 <div class="contentBody" id="contentBody">
 
                     <!-- Div to show incomplete todos -->
-                    <div class="incompletedTodos todoOverflow">
+                    <div id="incompletedTodos" class="incompletedTodos todoOverflow">
                         <h3>Incomplete Todos</h3>
                         <div class="todoItem">
                             <div class="ids">
@@ -47,17 +47,15 @@
                                 <button name="btnComplete" id="btnComplete">False</button>
                             </div>
                         </div>
-                        <div class="todoItem">2</div>
-                        <div class="todoItem">3</div>
-                        <div class="todoItem">4</div>
-                        <div class="todoItem">5</div>
                     </div>
 
                     <!-- Div to create new todos -->
-                    <div id="createNew">Create New todo</div>
+                    <div id="createNew">
+                        <h3>Create New</h3>
+                    </div>
 
                     <!-- Div to host completed todos -->
-                    <div class="completedTodos todoOverflow">
+                    <div id="completedTodos" class="completedTodos todoOverflow">
                         <h3>Completed Todos</h3>
                         <div class="todoItem">
                             <div class="ids">
