@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wait-Async-Todo</title>
+    <title>Fetch Todo</title>
     <link rel="stylesheet" href="./app.css">
 </head>
 <body>
@@ -15,23 +15,45 @@
         <!-- Content Section -->
         <section class="content">
 
-            <!-- Menu Frame -->
-            <div id="menuFrame">
+            <div class="desc">
+                <h2><u>Todo Manager</u></h2>
+                <!-- Menu Frame -->
+                <div id="menuFrame">
 
-                <a id="viewTodo">All Todos</a>
-                <a id="createTodo">Create New</a>
-                <a id="completedTodo">Completed Todos</a>
+                    <a id="createTodo">Create New</a>
+                    <a id="incompleteTodo">Incomplete Todos</a>
+                    <a id="completedTodo">Completed Todos</a>
 
+                </div>
             </div>
 
             <!-- Content display -->
             <div id="contentDisplay">
                 
                 <!-- Content Body -->
-                <div id="contentBody">
+                <div class="contentBody" id="contentBody">
 
-                    <!-- Div to show all todos -->
-                    <div id="allTodos">All Todos</div>
+                    <!-- Div to show incomplete todos -->
+                    <div class="incompletedTodos">
+                        <h3>Incomplete Todos</h3>
+                        <div class="todoItem">
+                            <div class="ids">
+                                <p>User Id:</p>
+                                <p>Todo Id:</p>
+                            </div>
+                            <h4>Title</h4>
+                            <div class="state">
+                                <label for="btnComplete">Completed: </label>
+                                <button name="btnComplete" id="btnComplete">False</button>
+                            </div>
+                        </div>
+                        <div class="todoItem">2</div>
+                        <div class="todoItem">3</div>
+                        <div class="todoItem">4</div>
+                        <div class="todoItem">5</div>
+                        <div class="todoItem">6</div>
+                        <div class="todoItem">7</div>
+                    </div>
 
                     <!-- Div to create new todos -->
                     <div id="createNew">Create New todo</div>
