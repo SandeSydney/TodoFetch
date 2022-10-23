@@ -33,6 +33,29 @@
                 <!-- Content Body -->
                 <div class="contentBody" id="contentBody">
 
+                    <!-- Div to create new todos -->
+                    <div id="createNew" class="createNew">
+                        <h3>Create New Todo</h3>
+                        <div class="form">
+                            <div class="formItem">
+                                <label for="userID">User ID:</label>
+                                <input type="text" name="userID" id="userID">
+                            </div>
+                            <div class="formItem">
+                                <label for="title">Title:</label>
+                                <input type="text" name="title" id="title">
+                            </div>
+                            <div>
+                                <input type="radio" name="completed" id="completed" value="completed" hidden>
+                                <input type="radio" name="completed" id="incompleted" value="incompleted" hidden checked>
+                            </div>
+                            <div class="btns">
+                                <button style="background-color: #d2691e;" onclick="reset()">Reset</button>
+                                <button style="background-color: green;">Add</button>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- Div to show incomplete todos -->
                     <div id="incompletedTodos" class="incompletedTodos todoOverflow">
                         <h3>Incomplete Todos</h3>
@@ -44,14 +67,9 @@
                             <h4>Title</h4>
                             <div class="state">
                                 <label for="btnComplete">Completed: </label>
-                                <button name="btnComplete" id="btnComplete">False</button>
+                                <button name="btnComplete" id="btnComplete" style="background-color: #d2691e;">False</button>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Div to create new todos -->
-                    <div id="createNew">
-                        <h3>Create New</h3>
                     </div>
 
                     <!-- Div to host completed todos -->
@@ -65,13 +83,9 @@
                             <h4>Title</h4>
                             <div class="state">
                                 <label for="btnComplete">Completed: </label>
-                                <button name="btnComplete" id="btnComplete">True</button>
+                                <button name="btnComplete" style="background-color: #008000;" id="btnComplete">True</button>
                             </div>
                         </div>
-                        <div class="todoItem">2</div>
-                        <div class="todoItem">3</div>
-                        <div class="todoItem">4</div>
-                        <div class="todoItem">5</div>
                     </div>
 
                 </div>
