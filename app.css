@@ -18,7 +18,7 @@ body{
 /* Container Styling */
 .container{
     height: auto;
-    width: 70%;
+    width: 65%;
 }
 
 .content{
@@ -42,13 +42,14 @@ body{
 /* Menu Frame Styling */
 .container .content .desc #menuFrame{
     box-sizing: border-box;
-    height: 40vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     gap: 30px;
+    margin: 20px 10px;
 }
 
 .container .content #menuFrame a:hover{
@@ -61,8 +62,8 @@ body{
 
 .container .content #contentDisplay{
     border-left: 2px solid #4b2148;
-    flex: 3;
-    height: 75vh;
+    flex: 2;
+    height: 60vh;
     padding: 10px 15px;
 }
 
@@ -72,23 +73,28 @@ body{
     padding: 10px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     height: 95%;
     text-align: center;
+    width: 100%;
 }
 
-.container .content .contentBody .incompletedTodos{
-    /* display: none; */
+.todoOverflow{
     overflow-y: auto;
     height: 100%;
     margin: 5px 0px;
 }
 
-.container .content .contentBody .incompletedTodos .todoItem{
+.container .content .contentBody .incompletedTodos{
+    display: none;    
+}
+
+.todoItem{
     background-color: #37235f;
     border: 1px solid #4b2148;
     border-radius: 15px;
     height: auto;
-    width: 90%;
+    width: 85%;
     margin: 10px;
     padding: 15px;
     display: flex;
@@ -114,12 +120,46 @@ button{
     text-align: center;
     border: none;
     border-radius: 8px;
+    color: white;
+    font-weight: bold;
 }
 
-.container .content .contentBody #createNew{
+.container .content .contentBody .createNew{
     display: none;
 }
 
-.container .content .contentBody #completedTodos{
+.form{
+    background-color: #37235f;
+    border: 1px solid #4b2148;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px 25px;
+    margin: 20px 15px;
+    width: 80%;
+}
+
+.form .formItem{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 10px;
+}
+
+.form .formItem input{
+    width: 95%;
+    padding: 8px;
+    border: none;
+    border-radius: 10px;
+}
+
+.btns{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.container .content .contentBody .completedTodos{
     display: none;
 }
