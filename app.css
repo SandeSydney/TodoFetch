@@ -34,15 +34,20 @@ body{
     gap: 20px;
 }
 
-/* Menu Frame Styling */
-.container .content #menuFrame{
-    box-sizing: border-box;
+.desc{
     flex: 1;
+    text-align: center;
+}
+
+/* Menu Frame Styling */
+.container .content .desc #menuFrame{
+    box-sizing: border-box;
     height: 40vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     gap: 30px;
 }
 
@@ -55,23 +60,66 @@ body{
 }
 
 .container .content #contentDisplay{
-    border-left: 2px solid rgb(99, 42, 95);
+    border-left: 2px solid #4b2148;
     flex: 3;
-    height: 80vh;
+    height: 75vh;
+    padding: 10px 15px;
 }
 
-.container .content #contentBody{
-    /* background-color: #3b2b5a; */
-    padding: 15px 10px;
+.container .content .contentBody{
+    background-color: #3b2b5a;
+    border-radius: 15px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
+    height: 95%;
+    text-align: center;
+}
+
+.container .content .contentBody .incompletedTodos{
+    /* display: none; */
+    overflow-y: auto;
+    height: 100%;
+    margin: 5px 0px;
+}
+
+.container .content .contentBody .incompletedTodos .todoItem{
+    background-color: #37235f;
+    border: 1px solid #4b2148;
+    border-radius: 15px;
+    height: auto;
+    width: 90%;
+    margin: 10px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ids, .state{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 45%;
     align-items: center;
 }
-
-.container .content #contentBody #allTodos{
-    /* display: none; */
+.state{
+    justify-content: center;
+    gap: 20px;
 }
 
-.container .content #contentBody #createNew{
-    /* display: none; */
+button{
+    padding: 10px;
+    width: 80px;
+    text-align: center;
+    border: none;
+    border-radius: 8px;
+}
+
+.container .content .contentBody #createNew{
+    display: none;
+}
+
+.container .content .contentBody #completedTodos{
+    display: none;
 }
