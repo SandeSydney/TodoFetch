@@ -1,19 +1,66 @@
+let incoTodos = []
+let comTodos = []
+
 // get data through fetch api
-fetch('https://jsonplaceholder.typicode.com/todos')
-    .then((resp) =>{
-        return resp.json()
-    })
-    .then((data)=>{
-        displayData(data)
-    })     
+const getData = ()=>{
+    fetch('https://jsonplaceholder.typicode.com/todos')
+        .then((resp) =>{
+            return resp.json()
+        })
+        .then((data)=>{
+            displayData(data)
+        })
+}
+getData()
+ 
+
+// Function to add data to fetch api
+const addData = ()=>{
+    if(document.getElementById('userID').value == ''){
+        let err = 'Kindly supply user Id!'
+        document.getElementById('userErr').style.display = 'block'
+        document.getElementById('userErr').innerHTML += err
+    }else if(document.getElementById('title').value == ''){
+        let err = 'Title is required!'
+        document.getElementById('titleErr').style.display = 'block'
+        document.getElementById('titleErr').innerHTML += err
+
+    }else{
+        let uID = document.getElementById('userID').value
+        let toTitle = document.getElementById('title').value
+        let toDone = document.getElementById('completed').value
+
+        fetch('https://jsonplaceholder.typicode.com/todos',{
+            // pass data for new item
+            method: 'POST',
+            headers: {
+                'Content-type':'application/json'
+            },
+            body: JSON.stringify({
+                userId: uID,
+                id:201,
+                title: toTitle,
+                completed: toDone
+            })
+        }).then((response)=>{return response.json()})
+        .then((data)=>{
+            incoTodos.push(data)
+            document.getElementById('successs').style.display = 'block'
+        })
+
+        reset()
+    }
+
+   
+}
 
 
 // function to display data
 const displayData = (data)=>{
     // console.log(data);
 
-    let incoTodos = data.filter((todo)=>todo.completed===false)
-    let comTodos = data.filter((todo)=>todo.completed === true)
+    incoTodos = data.filter((todo)=>todo.completed===false)
+    comTodos = data.filter((todo)=>todo.completed === true)
 
     displayIncomplete(incoTodos)
     displayComplete(comTodos)
@@ -44,7 +91,7 @@ const displayIncomplete = (incoTodos)=>{
                 </div>
             </div>
             `
-            document.getElementById('incompletedTodos').innerHTML += todosList
+            document.getElementById('incompletedTodos').innerHTML = todosList
         })
     }
     
@@ -75,24 +122,10 @@ const displayComplete = (comTodos)=>{
                             </div>
                         </div>
             `
-            document.getElementById('completedTodos').innerHTML += todosList
+            document.getElementById('completedTodos').innerHTML = todosList
         })
     }
     
-}
-
-// form validation
-const formValidate = ()=>{
-    if(document.getElementById('userID').value == ''){
-        let err = 'Kindly supply user Id!'
-        document.getElementById('userErr').style.display = 'block'
-        document.getElementById('userErr').innerHTML += err
-    }
-    if(document.getElementById('title').value == ''){
-        let err = 'Title is required!'
-        document.getElementById('titleErr').style.display = 'block'
-        document.getElementById('titleErr').innerHTML += err
-    }
 }
 
 // Change display in the content section
@@ -101,15 +134,7 @@ const changeDisplay = (element)=>{
         document.getElementById('createNew').style.display = 'block'
         document.getElementById('incompletedTodos').style.display = 'none'
         document.getElementById('completedTodos').style.display = 'none'
-    } else if(element.id == 'incompleteTodo'){
-        document.getElementById('incompletedTodos').style.display = 'block'
-        document.getElementById('completedTodos').style.display = 'none'
-        document.getElementById('createNew').style.display = 'none'
-    } else if(element.id == 'completedTodo'){
-        document.getElementById('completedTodos').style.display = 'block'
-        document.getElementById('incompletedTodos').style.display = 'none'
-        document.getElementById('createNew').style.display = 'none'
-    }
+    } 
 }
 
 // Reset form elements

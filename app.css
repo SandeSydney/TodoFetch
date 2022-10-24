@@ -125,7 +125,7 @@ button{
 }
 
 .container .content .contentBody .createNew{
-    display: none;
+    display: block;
 }
 
 .form{
