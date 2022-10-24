@@ -21,8 +21,8 @@
                 <div id="menuFrame">
 
                     <a id="createTodo" onclick="changeDisplay(this)">Create New</a>
-                    <a id="incompleteTodo" onclick="changeDisplay(this)">Incomplete Todos</a>
-                    <a id="completedTodo" onclick="changeDisplay(this)">Completed Todos</a>
+                    <a id="incompleteTodo">Incomplete Todos</a>
+                    <a id="completedTodo">Completed Todos</a>
 
                 </div>
             </div>
@@ -36,13 +36,16 @@
                     <!-- Div to create new todos -->
                     <div id="createNew" class="createNew">
                         <h3>Create New Todo</h3>
+                        <p id="success" style="color: #adff2f; display: none;">Todo Added Successfully!</p>
                         <div class="form">
                             <div class="formItem">
                                 <label for="userID">User ID:</label>
+                                <p id="userErr" style="color: red; display: none;">Error:</p>
                                 <input type="text" name="userID" id="userID">
                             </div>
                             <div class="formItem">
                                 <label for="title">Title:</label>
+                                <p id="titleErr" style="color: red; display: none;">Error:</p>
                                 <input type="text" name="title" id="title">
                             </div>
                             <div>
@@ -51,7 +54,7 @@
                             </div>
                             <div class="btns">
                                 <button style="background-color: #d2691e;" onclick="reset()">Reset</button>
-                                <button style="background-color: green;">Add</button>
+                                <button style="background-color: green;" onclick="postData()">Add</button>
                             </div>
                         </div>
                     </div>
@@ -59,33 +62,13 @@
                     <!-- Div to show incomplete todos -->
                     <div id="incompletedTodos" class="incompletedTodos todoOverflow">
                         <h3>Incomplete Todos</h3>
-                        <div class="todoItem">
-                            <div class="ids">
-                                <p>User Id:</p>
-                                <p>Todo Id:</p>
-                            </div>
-                            <h4>Title</h4>
-                            <div class="state">
-                                <label for="btnComplete">Completed: </label>
-                                <button name="btnComplete" id="btnComplete" style="background-color: #d2691e;">False</button>
-                            </div>
-                        </div>
+                        
                     </div>
 
                     <!-- Div to host completed todos -->
                     <div id="completedTodos" class="completedTodos todoOverflow">
                         <h3>Completed Todos</h3>
-                        <div class="todoItem">
-                            <div class="ids">
-                                <p>User Id:</p>
-                                <p>Todo Id:</p>
-                            </div>
-                            <h4>Title</h4>
-                            <div class="state">
-                                <label for="btnComplete">Completed: </label>
-                                <button name="btnComplete" style="background-color: #008000;" id="btnComplete">True</button>
-                            </div>
-                        </div>
+                        
                     </div>
 
                 </div>
