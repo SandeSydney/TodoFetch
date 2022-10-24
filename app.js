@@ -1,11 +1,38 @@
 // get data through fetch api
-fetch('https://jsonplaceholder.typicode.com/todos')
-    .then((resp) =>{
-        return resp.json()
-    })
-    .then((data)=>{
-        displayData(data)
-    })     
+const getData = ()=>{
+    fetch('https://jsonplaceholder.typicode.com/todos')
+        .then((resp) =>{
+            return resp.json()
+        })
+        .then((data)=>{
+            displayData(data)
+        })
+}
+getData()
+ 
+
+// Function to add data to fetch api
+const addData = ()=>{
+    formValidate()
+
+    let uID = document.getElementById('userID').value
+    let toTitle = document.getElementById('title').value
+    let toDone = document.getElementById('completed').value
+
+    fetch('https://jsonplaceholder.typicode.com/todos',{
+        // pass data for new item
+        method: 'POST',
+        headers: {
+            'Content-type':'application/json'
+        },
+        body: JSON.stringify({
+            userId: uID,
+            id:201,
+            title: toTitle,
+            completed: 'true'
+        })
+    }).then((response)=>{return response.json()}).then((data)=>{console.log(data)})
+}
 
 
 // function to display data
@@ -44,7 +71,7 @@ const displayIncomplete = (incoTodos)=>{
                 </div>
             </div>
             `
-            document.getElementById('incompletedTodos').innerHTML += todosList
+            document.getElementById('incompletedTodos').innerHTML = todosList
         })
     }
     
@@ -75,7 +102,7 @@ const displayComplete = (comTodos)=>{
                             </div>
                         </div>
             `
-            document.getElementById('completedTodos').innerHTML += todosList
+            document.getElementById('completedTodos').innerHTML = todosList
         })
     }
     
